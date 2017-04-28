@@ -4,8 +4,9 @@ using namespace std;
 int factorial(int i);
 int menu();
 float euler(float x);
-int main(){
 
+
+int main(){
 
 bool salir = false;
   while(!salir){
@@ -21,13 +22,26 @@ bool salir = false;
         break;
         }
         case 2:{
+	
+	float puntos[7];
+	cout<<"Escriba un digito X del punto A: (x, y) "<<endl;
+	cin>> puntos[0];
+	cout<<"Escriba un digito Y del punto A: (x, y) "<<endl;
+        cin>> puntos[1];
+	cout<<"Escriba un digito X del punto B: (x, y) "<<endl;
+        cin>> puntos[2];
+	cout<<"Escriba un digito Y del punto B: (x, y) "<<endl;
+        cin>> puntos[3];
+	cout<<"Escriba un digito X del punto C: (x, y) "<<endl;
+        cin>> puntos[4];
+	cout<<"Escriba un digito Y del punto C: (x, y) "<<endl;
+        cin>> puntos[5];
+	cout<<"Escriba un digito X del punto D: (x, y) "<<endl;
+        cin>> puntos[6];
+	cout<<"Escriba un digito Y del punto D: (x, y) "<<endl;
+        cin>> puntos[7];
+	
 
-        int num1, num2;
-        cout<<"Escriba un numero: ";
-        cin>>num1;
-        cout<<"Escriba otro numero: ";
-        cin>>num2;
-        cout<<"El resultado es: "<<num1 + num2<<endl;
 	break;
 	}
 	case 3:{
