@@ -74,7 +74,8 @@ bool salir = false;
 	lado2 = sqrt(pow(puntos[4]-puntos[2],2) + pow(puntos[5]-puntos[3],2));
 	lado3 = sqrt(pow(puntos[6]-puntos[4],2) + pow(puntos[7]-puntos[5],2));
 	lado4 = sqrt(pow(puntos[6]-puntos[0],2) + pow(puntos[7]-puntos[1],2));
-	lado4=2;	
+	
+	
 	cout<<"Los puntos son:\n"<<"("<<puntos[0]<<","<<puntos[1]<<")\n";
 	cout<<"Los puntos son:\n"<<"("<<puntos[2]<<","<<puntos[3]<<")\n";
 	cout<<"Los puntos son:\n"<<"("<<puntos[4]<<","<<puntos[5]<<")\n";
@@ -107,10 +108,11 @@ bool salir = false;
         cout<<"Semiperimetro triangulo 2: "<< Striangulo2/2 <<endl;
         cout<<"Perimetro triangulo 1: "<< Striangulo1 <<endl;
 	cout<<"Perimetro triangulo 2: "<< Striangulo2 <<endl;
-	
+	Striangulo1=Striangulo1/2;
+	Striangulo2=Striangulo2/2;
 	//altura de triangulos
 	float altura1, altura2, altura3;
-	altura1 = (2/lado4) * sqrt(Striangulo1*(triangulo1 - lado4)*(Striangulo1 - lado1)*(Striangulo1-ladoDB));
+	altura1 = (2/lado4) * sqrt(Striangulo1*(Striangulo1 - lado4)*(Striangulo1 - lado1)*(Striangulo1-ladoDB));
 	altura2 = (2/lado1) * sqrt(Striangulo1*(Striangulo1 - lado4)*(Striangulo1 - lado1)*(Striangulo1-ladoDB));
  	altura3 =   sqrt(Striangulo1*(Striangulo1 - lado4)*(Striangulo1 - lado1)*(Striangulo1-ladoDB))*(2/ladoDB);
 	
