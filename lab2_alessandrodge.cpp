@@ -31,28 +31,56 @@ bool salir = false;
           cin>> puntos[1];
 	  cout<<"Escriba un digito X del punto B: (x, y) "<<endl;
           cin>> puntos[2];
+	  while(puntos[2]==puntos[0]){
+		cout<<"Escriba OTRO digito : "<<endl;
+		cin>>puntos[0];
+	  }
 	  cout<<"Escriba un digito Y del punto B: (x, y) "<<endl;
           cin>> puntos[3];
+	  while(puntos[3]==puntos[1]){
+                cout<<"Escriba OTRO digito:"<<endl;
+                cin>>puntos[3];
+          }
 	  cout<<"Escriba un digito X del punto C: (x, y) "<<endl;
           cin>> puntos[4];
+	  while(puntos[4]==puntos[0]||puntos[4]==puntos[2]){
+                cout<<"Escriba OTRO digito:"<<endl;
+                cin>>puntos[4];
+          }
+
 	  cout<<"Escriba un digito Y del punto C: (x, y) "<<endl;
           cin>> puntos[5];
+	  while(puntos[5]==puntos[1]||puntos[5]==puntos[3]){
+                cout<<"Escriba OTRO digito: "<<endl;
+                cin>>puntos[5];
+          }
 	  cout<<"Escriba un digito X del punto D: (x, y) "<<endl;
           cin>> puntos[6];
+	  while(puntos[6]==puntos[0]||puntos[6]==puntos[4]||puntos[6]==puntos[2]){
+                cout<<"Escriba OTRO digito: "<<endl;
+                cin>>puntos[6];
+          }
+
 	  cout<<"Escriba un digito Y del punto D: (x, y) "<<endl;
           cin>> puntos[7];
+	  while(puntos[7]==puntos[1]||puntos[7]==puntos[3]||puntos[7]==puntos[5]){
+                cout<<"Escriba OTRO digito: "<<endl;
+                cin>>puntos[7];
+          }
+
+	
 
 	lado1 = sqrt(pow(puntos[2]-puntos[0],2)	+ pow(puntos[3]-puntos[1],2));
 	lado2 = sqrt(pow(puntos[4]-puntos[2],2) + pow(puntos[5]-puntos[3],2));
 	lado3 = sqrt(pow(puntos[6]-puntos[4],2) + pow(puntos[7]-puntos[5],2));
-	lado4 = sqrt(pow(puntos[0]-puntos[6],2) + pow(puntos[1]-puntos[7],2));
-	
+	lado4 = sqrt(pow(puntos[6]-puntos[0],2) + pow(puntos[7]-puntos[1],2));
+	lado4=2;	
 	cout<<"Los puntos son:\n"<<"("<<puntos[0]<<","<<puntos[1]<<")\n";
 	cout<<"Los puntos son:\n"<<"("<<puntos[2]<<","<<puntos[3]<<")\n";
 	cout<<"Los puntos son:\n"<<"("<<puntos[4]<<","<<puntos[5]<<")\n";
 	cout<<"Los puntos son:\n"<<"("<<puntos[6]<<","<<puntos[7]<<")\n"<<endl;
 
-	cout<<"Los lados del trapezoide miden:\n"
+	cout<<"Los lados del trapezoide miden:\n";
 	cout<<"Lado 1: "<< lado1<<endl;
 	cout<<"Lado 2: "<< lado2<<endl;
 	cout<<"Lado 3: "<< lado3<<endl;
@@ -60,12 +88,12 @@ bool salir = false;
 
 	//sacando el lado DB
 	ladoDB = sqrt(pow(puntos[2]-puntos[6],2) + pow(puntos[3]-puntos[7],2));
-	cout<<"Los lados del primer triangulo miden:\n"
+	cout<<"Los lados del primer triangulo miden:\n";
         cout<<"Lado 1: "<< lado4<<endl;
         cout<<"Lado 2: "<< lado1<<endl;
         cout<<"Lado 3: "<< ladoDB<<endl;
  	
-	cout<<"Los lados del segundo triangulo miden:\n"
+	cout<<"Los lados del segundo triangulo miden:\n";
         cout<<"Lado 1: "<< lado2<<endl;
         cout<<"Lado 2: "<< lado3<<endl;
         cout<<"Lado 3: "<< ladoDB<<endl;
@@ -74,7 +102,7 @@ bool salir = false;
 	float Striangulo1, Striangulo2;
 	Striangulo1 = lado4 + lado1 + ladoDB;
 	Striangulo2 = lado2 + lado3 + ladoDB;
-	cout<<"Los lados del segundo triangulo miden:\n"
+	cout<<"Los lados del segundo triangulo miden:\n";
         cout<<"Semiperimetro triangulo 1: "<< Striangulo1/2 <<endl;
         cout<<"Semiperimetro triangulo 2: "<< Striangulo2/2 <<endl;
         cout<<"Perimetro triangulo 1: "<< Striangulo1 <<endl;
@@ -82,24 +110,25 @@ bool salir = false;
 	
 	//altura de triangulos
 	float altura1, altura2, altura3;
-	altura1 = 2/lado4 * sqrt(Striangulo1*(Striangulo1 - lado4)*(Striangulo1 - lado1)*(Striangulo1-ladoDB));
-	altura2 = 2/lado1 * sqrt(Striangulo1*(Striangulo1 - lado4)*(Striangulo1 - lado1)*(Striangulo1-ladoDB));
- 	altura3 = 2/ladoDB * sqrt(Striangulo1*(Striangulo1 - lado4)*(Striangulo1 - lado1)*(Striangulo1-ladoDB));
+	altura1 = (2/lado4) * sqrt(Striangulo1*(triangulo1 - lado4)*(Striangulo1 - lado1)*(Striangulo1-ladoDB));
+	altura2 = (2/lado1) * sqrt(Striangulo1*(Striangulo1 - lado4)*(Striangulo1 - lado1)*(Striangulo1-ladoDB));
+ 	altura3 =   sqrt(Striangulo1*(Striangulo1 - lado4)*(Striangulo1 - lado1)*(Striangulo1-ladoDB))*(2/ladoDB);
 	
-	cout<<"Las alturas del primer triangulo son:\n"
+	cout<<"Las alturas del primer triangulo son:\n";
         cout<<"Altura 1: "<< altura1 <<endl;
         cout<<"Altura 2: "<< altura2 <<endl;
-        cout<<"Altura 3:"<< altura3 <<endl;
+        cout<<"Altura 3: "<< altura3 <<endl;
         
-	float altura4, altura5, altura6;
-	altura4 = 2/lado2 * sqrt(Striangulo2*(Striangulo2 - lado2)*(Striangulo2 - lado3)*(Striangulo2-ladoDB));
-        altura5 = 2/lado3 * sqrt(Striangulo2*(Striangulo2 - lado2)*(Striangulo2 - lado3)*(Striangulo2-ladoDB));
-        altura6 = 2/ladoDB * sqrt(Striangulo2*(Striangulo2 - lado2)*(Striangulo2 - lado3)*(Striangulo2-ladoDB));
+	float altura4, altura5, altura6, alturaprueba;
+	alturaprueba= sqrt(Striangulo2*(Striangulo2 - lado2)*(Striangulo2 - lado3)*(Striangulo2-ladoDB));
+	altura4 = (2/lado2)* alturaprueba;
+        altura5 = (2/lado3)* sqrt(Striangulo2*((Striangulo2 - lado2)*(Striangulo2 - lado3)*(Striangulo2-ladoDB)));
+        altura6 = (2/ladoDB) * sqrt(Striangulo2*(Striangulo2 - lado2)*(Striangulo2 - lado3)*(Striangulo2-ladoDB));
         
-	cout<<"Las alturas del segundo triangulo son:\n"
+	cout<<"Las alturas del segundo triangulo son:\n";
         cout<<"Altura 1: "<< altura4 <<endl;
         cout<<"Altura 2: "<< altura5 <<endl;
-        cout<<"Altura 3:"<< altura6 <<endl;
+        cout<<"Altura 3: "<< altura6 <<endl;
 	
 	//El area del trapezoide
 	float area;
