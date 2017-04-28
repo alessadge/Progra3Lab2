@@ -71,16 +71,41 @@ bool salir = false;
         cout<<"Lado 3: "<< ladoDB<<endl;
 	
 	//calculando el perimetro
-	float Striangulo1, Striangulo2, S;
+	float Striangulo1, Striangulo2;
+	Striangulo1 = lado4 + lado1 + ladoDB;
+	Striangulo2 = lado2 + lado3 + ladoDB;
 	cout<<"Los lados del segundo triangulo miden:\n"
-        cout<<"Semiperimetro triangulo 1: "<< lado2<<endl;
-        cout<<"Semiperimetro triangulo 2: "<< lado3<<endl;
-        cout<<"Perimetro triangulo 1:"<< ladoDB<<endl;
-	cout<<"Perimetro triangulo 2:"<< ladoDB<<endl;
-
-
-
-
+        cout<<"Semiperimetro triangulo 1: "<< Striangulo1/2 <<endl;
+        cout<<"Semiperimetro triangulo 2: "<< Striangulo2/2 <<endl;
+        cout<<"Perimetro triangulo 1: "<< Striangulo1 <<endl;
+	cout<<"Perimetro triangulo 2: "<< Striangulo2 <<endl;
+	
+	//altura de triangulos
+	float altura1, altura2, altura3;
+	altura1 = 2/lado4 * sqrt(Striangulo1*(Striangulo1 - lado4)*(Striangulo1 - lado1)*(Striangulo1-ladoDB));
+	altura2 = 2/lado1 * sqrt(Striangulo1*(Striangulo1 - lado4)*(Striangulo1 - lado1)*(Striangulo1-ladoDB));
+ 	altura3 = 2/ladoDB * sqrt(Striangulo1*(Striangulo1 - lado4)*(Striangulo1 - lado1)*(Striangulo1-ladoDB));
+	
+	cout<<"Las alturas del primer triangulo son:\n"
+        cout<<"Altura 1: "<< altura1 <<endl;
+        cout<<"Altura 2: "<< altura2 <<endl;
+        cout<<"Altura 3:"<< altura3 <<endl;
+        
+	float altura4, altura5, altura6;
+	altura4 = 2/lado2 * sqrt(Striangulo2*(Striangulo2 - lado2)*(Striangulo2 - lado3)*(Striangulo2-ladoDB));
+        altura5 = 2/lado3 * sqrt(Striangulo2*(Striangulo2 - lado2)*(Striangulo2 - lado3)*(Striangulo2-ladoDB));
+        altura6 = 2/ladoDB * sqrt(Striangulo2*(Striangulo2 - lado2)*(Striangulo2 - lado3)*(Striangulo2-ladoDB));
+        
+	cout<<"Las alturas del segundo triangulo son:\n"
+        cout<<"Altura 1: "<< altura4 <<endl;
+        cout<<"Altura 2: "<< altura5 <<endl;
+        cout<<"Altura 3:"<< altura6 <<endl;
+	
+	//El area del trapezoide
+	float area;
+	area = 	((ladoDB * altura3)/2)+((ladoDB * altura6)/2);
+	cout<<"El area del trapezoide es de: "<<area<<endl;
+	
 	break;
 	}
 	case 3:{
