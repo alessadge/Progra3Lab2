@@ -1,9 +1,9 @@
 #include <iostream>
-
+#include <cmath>
 using namespace std;
 int factorial(int i);
 int menu();
-int euler(int x);
+float euler(float x);
 int main(){
 
 
@@ -13,7 +13,7 @@ bool salir = false;
         switch(menu()){
         case 1:{
 
-        int x;
+        float x;
         cout<<"Escriba un numero para calcular el numero de Euler. "<<endl;
         cin>>x;
         cout<<"EL numero "<<x<<" tiene un numero Euler de: "<<euler(x)<<endl;
@@ -32,11 +32,19 @@ bool salir = false;
 	}
 	case 3:{
 	
-	
+	salir = true;
 	break;
 	}	
 }
-  
+  char resp;
+  cout<<"Desea continuar[s/n]: "<<endl;
+  cin>>resp;
+  if(resp == 's' || resp == 'S'){
+	salir=false;
+  }else{
+	salir=true;
+  }
+
 }
 return 0;
 }
@@ -77,10 +85,11 @@ int factorial(int i){
   }
 }
 
-int euler(int x){
-int temp=0;
- for(int i=1; i<=x; i++){
-   temp += x/factorial(i);
+float euler(float x){
+float temp=0;
+ for(float i=1; i<=10; i++){
+   temp += pow(x,i)/factorial(i);
+
  }
  temp = temp + 1;
  x = temp;
