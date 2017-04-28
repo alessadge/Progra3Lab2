@@ -31,42 +31,22 @@ bool salir = false;
           cin>> puntos[1];
 	  cout<<"Escriba un digito X del punto B: (x, y) "<<endl;
           cin>> puntos[2];
-	  while(puntos[2]==puntos[0]){
-		cout<<"Escriba OTRO digito : "<<endl;
-		cin>>puntos[0];
-	  }
+	  
 	  cout<<"Escriba un digito Y del punto B: (x, y) "<<endl;
           cin>> puntos[3];
-	  while(puntos[3]==puntos[1]){
-                cout<<"Escriba OTRO digito:"<<endl;
-                cin>>puntos[3];
-          }
 	  cout<<"Escriba un digito X del punto C: (x, y) "<<endl;
           cin>> puntos[4];
-	  while(puntos[4]==puntos[0]||puntos[4]==puntos[2]){
-                cout<<"Escriba OTRO digito:"<<endl;
-                cin>>puntos[4];
-          }
-
+	 
 	  cout<<"Escriba un digito Y del punto C: (x, y) "<<endl;
           cin>> puntos[5];
-	  while(puntos[5]==puntos[1]||puntos[5]==puntos[3]){
-                cout<<"Escriba OTRO digito: "<<endl;
-                cin>>puntos[5];
-          }
+	  
 	  cout<<"Escriba un digito X del punto D: (x, y) "<<endl;
           cin>> puntos[6];
-	  while(puntos[6]==puntos[0]||puntos[6]==puntos[4]||puntos[6]==puntos[2]){
-                cout<<"Escriba OTRO digito: "<<endl;
-                cin>>puntos[6];
-          }
+	  
 
 	  cout<<"Escriba un digito Y del punto D: (x, y) "<<endl;
           cin>> puntos[7];
-	  while(puntos[7]==puntos[1]||puntos[7]==puntos[3]||puntos[7]==puntos[5]){
-                cout<<"Escriba OTRO digito: "<<endl;
-                cin>>puntos[7];
-          }
+	  
 
 	
 
