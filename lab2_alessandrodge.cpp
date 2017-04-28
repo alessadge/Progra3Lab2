@@ -22,25 +22,64 @@ bool salir = false;
         break;
         }
         case 2:{
-	
+	float lado1, lado2, lado3, lado4, ladoDB;
 	float puntos[7];
-	cout<<"Escriba un digito X del punto A: (x, y) "<<endl;
-	cin>> puntos[0];
-	cout<<"Escriba un digito Y del punto A: (x, y) "<<endl;
-        cin>> puntos[1];
-	cout<<"Escriba un digito X del punto B: (x, y) "<<endl;
-        cin>> puntos[2];
-	cout<<"Escriba un digito Y del punto B: (x, y) "<<endl;
-        cin>> puntos[3];
-	cout<<"Escriba un digito X del punto C: (x, y) "<<endl;
-        cin>> puntos[4];
-	cout<<"Escriba un digito Y del punto C: (x, y) "<<endl;
-        cin>> puntos[5];
-	cout<<"Escriba un digito X del punto D: (x, y) "<<endl;
-        cin>> puntos[6];
-	cout<<"Escriba un digito Y del punto D: (x, y) "<<endl;
-        cin>> puntos[7];
+	  //Leer puntos
+	  cout<<"Escriba un digito X del punto A: (x, y) "<<endl;
+	  cin>> puntos[0];
+	  cout<<"Escriba un digito Y del punto A: (x, y) "<<endl;
+          cin>> puntos[1];
+	  cout<<"Escriba un digito X del punto B: (x, y) "<<endl;
+          cin>> puntos[2];
+	  cout<<"Escriba un digito Y del punto B: (x, y) "<<endl;
+          cin>> puntos[3];
+	  cout<<"Escriba un digito X del punto C: (x, y) "<<endl;
+          cin>> puntos[4];
+	  cout<<"Escriba un digito Y del punto C: (x, y) "<<endl;
+          cin>> puntos[5];
+	  cout<<"Escriba un digito X del punto D: (x, y) "<<endl;
+          cin>> puntos[6];
+	  cout<<"Escriba un digito Y del punto D: (x, y) "<<endl;
+          cin>> puntos[7];
+
+	lado1 = sqrt(pow(puntos[2]-puntos[0],2)	+ pow(puntos[3]-puntos[1],2));
+	lado2 = sqrt(pow(puntos[4]-puntos[2],2) + pow(puntos[5]-puntos[3],2));
+	lado3 = sqrt(pow(puntos[6]-puntos[4],2) + pow(puntos[7]-puntos[5],2));
+	lado4 = sqrt(pow(puntos[0]-puntos[6],2) + pow(puntos[1]-puntos[7],2));
 	
+	cout<<"Los puntos son:\n"<<"("<<puntos[0]<<","<<puntos[1]<<")\n";
+	cout<<"Los puntos son:\n"<<"("<<puntos[2]<<","<<puntos[3]<<")\n";
+	cout<<"Los puntos son:\n"<<"("<<puntos[4]<<","<<puntos[5]<<")\n";
+	cout<<"Los puntos son:\n"<<"("<<puntos[6]<<","<<puntos[7]<<")\n"<<endl;
+
+	cout<<"Los lados del trapezoide miden:\n"
+	cout<<"Lado 1: "<< lado1<<endl;
+	cout<<"Lado 2: "<< lado2<<endl;
+	cout<<"Lado 3: "<< lado3<<endl;
+	cout<<"Lado 4: "<< lado4<<endl;
+
+	//sacando el lado DB
+	ladoDB = sqrt(pow(puntos[2]-puntos[6],2) + pow(puntos[3]-puntos[7],2));
+	cout<<"Los lados del primer triangulo miden:\n"
+        cout<<"Lado 1: "<< lado4<<endl;
+        cout<<"Lado 2: "<< lado1<<endl;
+        cout<<"Lado 3: "<< ladoDB<<endl;
+ 	
+	cout<<"Los lados del segundo triangulo miden:\n"
+        cout<<"Lado 1: "<< lado2<<endl;
+        cout<<"Lado 2: "<< lado3<<endl;
+        cout<<"Lado 3: "<< ladoDB<<endl;
+	
+	//calculando el perimetro
+	float Striangulo1, Striangulo2, S;
+	cout<<"Los lados del segundo triangulo miden:\n"
+        cout<<"Semiperimetro triangulo 1: "<< lado2<<endl;
+        cout<<"Semiperimetro triangulo 2: "<< lado3<<endl;
+        cout<<"Perimetro triangulo 1:"<< ladoDB<<endl;
+	cout<<"Perimetro triangulo 2:"<< ladoDB<<endl;
+
+
+
 
 	break;
 	}
